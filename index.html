@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Koneksi Internet Sekolah</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>⚙️ Monitor Koneksi Internet Sekolah</h1>
+        <p>Menampilkan status jaringan (ping, speed test, uptime server lokal).</p>
+    </header>
+
+    <main class="container">
+        <section class="status-grid">
+            <div class="card" id="ping-card">
+                <h2>Ping ke Gateway</h2>
+                <p class="status-value" id="ping-status">- ms</p>
+                <small>Status: <span id="ping-indicator" class="indicator grey">Menunggu</span></small>
+            </div>
+            <div class="card" id="download-card">
+                <h2>Kecepatan Download</h2>
+                <p class="status-value" id="download-speed">- Mbps</p>
+            </div>
+            <div class="card" id="upload-card">
+                <h2>Kecepatan Upload</h2>
+                <p class="status-value" id="upload-speed">- Mbps</p>
+            </div>
+            <div class="card" id="uptime-card">
+                <h2>Server Uptime</h2>
+                <p class="status-value" id="server-uptime">99.9%</p>
+                <small>Lokal Server (Contoh)</small>
+            </div>
+        </section>
+
+        <section class="main-features">
+            <div class="card speed-test-panel">
+                <h2>Uji Kecepatan Jaringan</h2>
+                <p>Klik tombol di bawah untuk memulai pengujian kecepatan internet secara manual.</p>
+                <button id="start-speedtest-btn">Mulai Tes Kecepatan</button>
+                <div id="speedtest-progress" style="display: none;">Menguji...</div>
+            </div>
+
+            <div class="card history-chart">
+                <h2>Grafik Histori Koneksi (Ping Latency)</h2>
+                <canvas id="connection-chart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Dibuat untuk Anak Jaringan | &copy; 2025 Lab Komputer Sekolah</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
